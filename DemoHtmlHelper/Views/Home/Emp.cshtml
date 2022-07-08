@@ -1,0 +1,32 @@
+﻿@model DemoHtmlHelper.Models.EmployeeModel
+<html>
+    <head>
+
+    </head>
+    <body>
+        <div>Input Id @Html.Editor("Id")</div>
+        <div>
+            @Html.DisplayName("Name") @Html.Editor("Name")
+        </div>
+        <div>@Html.DisplayName("Email") @Html.EditorFor(m=>m.Email)
+        </div>
+        <div>
+            @Html.EditorFor(m=>m.IsOnline)Online 
+        </div>
+        <div>
+            @Html.DisplayNameFor(m=>m.DateofBirth) @Html.EditorFor(m=>m.DateofBirth)
+        </div>
+        <div>
+            @Html.DisplayNameFor(m=>m.BirthTime) @Html.EditorFor(m=>m.BirthTime)
+        </div>
+        <hr />
+        <hr />
+        <b>Show EditorForModel</b>
+    @using (Html.BeginForm())
+    {
+        @Html.EditorForModel()
+        <input type="submit" value="Press me"/>
+    }
+    
+    </body>
+</html>
