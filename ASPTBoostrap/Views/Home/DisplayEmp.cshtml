@@ -1,0 +1,36 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutDemo.cshtml";
+}
+@model Employee
+<html>
+    <head>
+        <link href="/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    </head>
+        <body> 
+            <form asp-controller="Home" asp-action="DisplayEmp" method="post">
+                <div class="form-control">
+                    <div>
+                        <label asp-for="Name"class="col-sm-1 col-form-label"></label>
+                        <input asp-for="Name"class="form-control"/>
+                    </div>
+                    <div>
+                        <label asp-for="Email"class="col-sm-1 col-form-label"></label>
+                        <input asp-for="Email"class="form-control"/>
+                    </div>
+                    <div>
+                        <label asp-for="Department"class="col-sm-1 col-form-label"></label>
+                        <select asp-for="Department" asp-items="Html.GetEnumSelectList<Dept>()"class="form-control"></select>
+                    </div>
+                    <div>
+                        <label asp-for="Detail"class="col-sm-1 col-form-label"></label>
+                        <textarea asp-for="Detail"class="form-control"></textarea>
+                    </div>
+                    <br />
+                    <div>
+                        <input type="button" value="Create" class="btn-success form-control"/>
+
+                    </div>
+                </div>
+            </form>
+        </body>  
+</html>
